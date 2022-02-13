@@ -1,0 +1,14 @@
+.save-button-wrapper {
+    margin-top: 10px;
+    text-align: center;
+}
+.save-button {
+    height: 40px;
+    width: 90px;
+    background-color: #3d3dcb;
+    color: white;
+    font-size: 14px;
+}
+.form-field::ng-deep .mat-form-field-wrapper {
+    margin-right: 15px;
+}

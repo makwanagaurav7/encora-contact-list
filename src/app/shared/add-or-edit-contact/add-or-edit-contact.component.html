@@ -1,0 +1,25 @@
+<form [formGroup]="formGroup" id="add-or-edit-form">
+    <mat-form-field class="form-field" appearance="fill">
+        <input matInput placeholder="Enter First name" formControlName="firstName" autocomplete="off">
+        <mat-error *ngIf="formGroup.get('firstName')?.hasError('pattern')">
+            Enter the valid first name
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-field" appearance="fill">
+        <input matInput placeholder="Enter Last name" formControlName="lastName" autocomplete="off">
+        <mat-error *ngIf="formGroup.get('lastName')?.hasError('pattern')">
+            Enter the valid last name
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-field" appearance="fill">
+        <input matInput placeholder="Enter phone number" formControlName="phone" autocomplete="off" maxlength="10">
+        <mat-error *ngIf="formGroup.get('phone')?.hasError('pattern') || formGroup.get('phone')?.hasError('required')">
+            Enter the valid phone number
+        </mat-error>
+    </mat-form-field>
+    <div class="save-button-wrapper">
+        <button (click)="cancelClick()" class="save-button" mat-raised-button color="primary">Cancel</button>
+        <button (click)="saveNewContact()" [disabled]="formGroup.invalid" class="save-button" style="margin-left: 15px;"
+            mat-raised-button color="primary">{{data.contact ? 'Edit' : 'Save'}}</button>
+    </div>
+</form>
